@@ -24,25 +24,38 @@ De cada Institución, se tiene la siguiente información:
   
 
     
-1. listar todo.
+1. listar todo.//listo
+//opcion 1-Listar Todos los Clubes
+
 
 - 1 Función para la carga de datos.
-2. añadir un Club al final, si hay lugar
-
+2. añadir un Club al final, si hay lugar//listo
+//opcion 2-Cargar un nuevo club
 
 - 1 Función de ordenamiento.
-3. listar clubes ordenados por el id. 
-4. clubes ordenados por el nombre del Club.
+3. listar clubes ordenados por el id.
+// opcion 3-Ordenar por...->Ordenar Por Id
+
+4. clubes ordenados por el nombre del Club
+// opcion 3-Ordenar por...->Ordenar Por Nombre
 
     - 1 Función de búsqueda.
-5. buscar club por id y que me muestre información. (usar Algoritmo de búsqueda binaria).
+5. buscar club por id y que me muestre información. (usar Algoritmo de búsqueda binaria).//Listo! 23.37
+opcion 4-Buscar por ID
 
-6.  clubes ordenados por cantidad de socios (usar Algoritmo de Burbujeo)
-7. reporte de todos los clubes que tengan declarada cierta actividad
-deportiva (fútbol, básquet, vóley, etc). Este reporte debe pedirme por consola la actividad que quiero buscar y luego sacar el reporte. Además, quiero generar un nuevo vector, de cada uno de
-los tipos de actividades.
+6.  clubes ordenados por cantidad de socios (usar Algoritmo de Burbujeo)//Listo 23.46
+opcion 3 Ordenar por...->5- Por cantidad de socios
+
+7. reporte de todos los clubes que tengan declarada cierta actividad deportiva (fútbol, básquet, vóley, etc). Este reporte debe pedirme por consola la actividad que quiero buscar y luego sacar el reporte. Además, quiero generar un nuevo vector, de cada uno de los tipos de actividades.
+//opcion 5-Buscar actividades -> Opcion2-Buscar una actividad
+//opcion 5-Buscar actividades -> Opcion1- Listar todas las actividades!
+
+
 8. Como usuario quiero tener un reporte de todos los clubes que tengan una página web. El reporte lo necesito ordenado por Comuna (usar Algoritmo de Burbujeo).
-9. Como usuario quiero tener un reporte que diga el Id y nombre, del Club que mayor cantidad de socios tiene. 
+//opcion ->6-Reportar Paginas web
+
+9. Como usuario quiero tener un reporte que diga el Id y nombre, del Club que mayor cantidad de socios tiene.
+//opcion->7-ver club con mas socios
  */
 
 
@@ -53,21 +66,18 @@ namespace TrabajoIntegrador
 {
     class Program
     {
-        
+
         static void Main(string[] args)
         {
             int clubesYaCargados = 0;
             int maximoDeClubes = 300;
-            int cantidadHardcode = 3;
             Club[] listadoGeneral = new Club[maximoDeClubes];
-          
-            Menu miMenu = new Menu();          
-            clubesYaCargados += miMenu.hardcodearListado(ref listadoGeneral,  cantidadHardcode);
-           
-            //TODO
-           miMenu.mostrarMenu(ref listadoGeneral, ref clubesYaCargados, maximoDeClubes);
+            Menu miMenu = new Menu();
 
-           // miMenu.listarTodo(listadoGeneral, 300);
+            clubesYaCargados += miMenu.hardcodearListado(ref listadoGeneral);
+
+            miMenu.mostrarMenu(ref listadoGeneral, ref clubesYaCargados, maximoDeClubes);
+
         }
     }
 }

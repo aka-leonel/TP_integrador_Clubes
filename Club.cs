@@ -5,7 +5,7 @@ using System.Text;
 namespace TrabajoIntegrador
 {
     class Club
-    {
+    {/*
         private int id;
         private string nombre;
         private string tipoInstitucion;//Club o Club de Barrio
@@ -18,7 +18,7 @@ namespace TrabajoIntegrador
         private string email;
         private string paginaWeb;
         private string actividades;
-  
+  */
         public Club()
         {
             Id = -1;
@@ -41,18 +41,18 @@ namespace TrabajoIntegrador
             int comuna, string domicilio, string telefono,
             string email, string paginaWeb, string actividades)
         {
-            this.id = id;
-            this.nombre = nombre;
-            this.tipoInstitucion = tipoInstitucion;//Club o Club de Barrio
-            this.sede = sede;//Central – Única – Anexo - Polideportivo
-            this.cantidadDeSocios = cantidadDeSocios;
-            this.barrio = barrio;
-            this.comuna = comuna;
-            this.domicilio = domicilio;
-            this.telefono = telefono;
-            this.email = email;
-            this.paginaWeb = paginaWeb;
-            this.actividades = actividades;
+            Id = id;
+            Nombre = nombre;
+            TipoInstitucion= tipoInstitucion;//Club o Club de Barrio
+            Sede = sede;//Central – Única – Anexo - Polideportivo
+            CantidadDeSocios = cantidadDeSocios;
+            Barrio = barrio;
+            Comuna = comuna;
+            Domicilio = domicilio;
+            Telefono = telefono;
+            Email = email;
+            PaginaWeb = paginaWeb;
+            Actividades = actividades;
         }
 
         public int Id { get; set; }
@@ -70,12 +70,26 @@ namespace TrabajoIntegrador
 
         public override string ToString()
         {
-            return Id + " " + Nombre + " " +TipoInstitucion + " " +Sede + " " +CantidadDeSocios 
-                + " " +Barrio + " " +Comuna + " " +Domicilio + " " +Telefono + " " +Email + " " +PaginaWeb + " " +Actividades;
+            return CantidadDeSocios+" "+Id + " " + Nombre + " " +Telefono + " " +Actividades;
+            
         }
-        
-       
 
+        internal bool tieneActividad(string actBuscada)
+        {
+            bool r = false;
+            int len = this.Actividades.Length;
+
+            
+            for (int i = 0; i <= len - actBuscada.Length; i++) {                 
+                string auxPalabra = (this.Actividades.Substring(i, actBuscada.Length)).ToLower();
+                if (auxPalabra == actBuscada.ToLower()){
+                    r = true;
+                    break;
+                }
+            }
+
+            return r;
+        }
     }
 
     
